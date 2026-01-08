@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ArtistNavbar from "../ArtistNavbar";
+import { redirect } from "next/navigation";
 
 // Expanded dummy data for demonstration
 const ARTISTS = [
@@ -273,7 +274,7 @@ export default function ArtistPage({ params }: { params: Promise<{ id: string }>
       </div>
       {/* Buy Button */}
       <div className="flex justify-center mt-10">
-        <button className="px-8 py-3 bg-pink-600 text-white rounded-xl text-lg font-bold shadow hover:bg-pink-700 transition" onClick={() => setShowLogin(true)}>
+        <button className="px-8 py-3 bg-pink-600 text-white rounded-xl text-lg font-bold shadow hover:bg-pink-700 transition" onClick={() => redirect("/buyer-registration")}> {/* //onClick={() => setShowLogin(true)} */}
           Buy from this Artist
         </button>
       </div>

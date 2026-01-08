@@ -21,8 +21,24 @@ function BuyerVerifyContent() {
     if (token) {
       try {
         const user = JSON.parse(atob(token));
-        localStorage.setItem("user_role", "buyer");
-        localStorage.setItem("buyer_user", JSON.stringify(user));
+        user.role = "buyer";
+        // If password is missing, try to get from temp localStorage (if set during registration)
+        if (!user.password) {
+          try {
+            const tempPass = localStorage.getItem("buyer_temp_password");
+            if (tempPass) user.password = tempPass;
+          } catch {}
+        }
+        let users = [];
+        try {
+          users = JSON.parse(localStorage.getItem("users") || "[]");
+        } catch {}
+        const exists = users.some(u => u.email === user.email && u.role === "buyer");
+        if (!exists) {
+          users.push(user);
+        }
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("active_user", JSON.stringify(user));
         setTimeout(() => {
             router.replace("/dashboard");
         }, 4000);

@@ -20,8 +20,26 @@ function ArtistVerifyContent() {
     if (token) {
       try {
         const decoded = JSON.parse(atob(token));
-        localStorage.setItem("user_role", "artist");
-        localStorage.setItem("user_data", JSON.stringify(decoded));
+        decoded.role = "artist";
+        // If password is missing, try to get from temp localStorage (if set during registration)
+        if (!decoded.password) {
+          try {
+            const tempPass = localStorage.getItem("artist_temp_password");
+            if (tempPass) decoded.password = tempPass;
+          } catch {}
+        }
+        // Get users array from localStorage
+        let users = [];
+        try {
+          users = JSON.parse(localStorage.getItem("users") || "[]");
+        } catch {}
+        // Check if user already exists (by email)
+        const exists = users.some(u => u.email === decoded.email && u.role === "artist");
+        if (!exists) {
+          users.push(decoded);
+        }
+        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("active_user", JSON.stringify(decoded));
         setTimeout(() => {
           router.replace("/dashboard");
         }, 2500);

@@ -7,20 +7,20 @@ import LandingContent from "../LandingContent";
 
 export default function Home() {
   const router = useRouter();
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setShowNavbar(true);
-      } else {
-        setShowNavbar(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 500) {
+  //       setShowNavbar(true);
+  //     } else {
+  //       setShowNavbar(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll();
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const handleSelect = (role: "buyer" | "artist" | "guest") => {
     if (role === "buyer") {
@@ -35,7 +35,7 @@ export default function Home() {
   }, [router]);
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col items-center justify-start bg-gradient-to-br from-pink-200 via-blue-100 to-yellow-100 overflow-hidden">
+    <div className="relative min-h-screen pt-10 w-full flex flex-col items-center justify-start bg-gradient-to-br from-pink-200 via-blue-100 to-yellow-100 overflow-hidden">
       {/* Decorative background */}
       
       <div className="absolute inset-0 -z-10 pointer-events-none">

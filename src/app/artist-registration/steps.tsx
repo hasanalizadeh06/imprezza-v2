@@ -144,6 +144,7 @@ export function Step3ArtistSecurity({ form, update, next, back }: any) {
       const verifyToken = btoa(
         JSON.stringify({
           email: form.email,
+          password: form.password,
           firstName: form.firstName,
           lastName: form.lastName,
           phone: form.phone,

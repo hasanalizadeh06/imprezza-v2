@@ -14,28 +14,24 @@ export default function Dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    const role = localStorage.getItem("user_role");
-    setRole(role);
-    let data = null;
-    if (role === "artist") {
-      data = localStorage.getItem("artist_user");
-    } else if (role === "buyer") {
-      data = localStorage.getItem("buyer_user");
-    }
-    if (data) {
-      setUser(JSON.parse(data));
+    let activeUser = null;
+    try {
+      activeUser = JSON.parse(localStorage.getItem("active_user") || "null");
+    } catch {}
+    if (activeUser) {
+      setUser(activeUser);
+      setRole(activeUser.role);
     } else {
-      router.replace("/buyer-registration");
+      router.replace("/login");
     }
   }, [router]);
 
   // Navigation handlers
   const handleLogout = () => {
-    localStorage.removeItem("user_role");
-    localStorage.removeItem("user_data");
+    localStorage.removeItem("active_user");
     setUser(null);
     setRole(null);
-    router.replace("/buyer-registration");
+    router.replace("/login");
   };
   const handleEditProfile = () => {
     if (role === "artist") {

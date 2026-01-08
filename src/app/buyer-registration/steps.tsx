@@ -158,6 +158,7 @@ export function Step3Security({ form, update, next, back }: Step3Props) {
       const verifyToken = btoa(
         JSON.stringify({
           email: form.email,
+          password: form.password,
           firstName: form.firstName,
           lastName: form.lastName,
           phone: form.phone,

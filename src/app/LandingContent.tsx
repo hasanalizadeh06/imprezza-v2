@@ -11,10 +11,21 @@ export default function LandingContent({ onLogin, showNavbar = true }: { onLogin
           <div className="flex items-center gap-2">
             <span className="text-2xl font-extrabold text-blue-700 tracking-tight">Imprezza</span>
           </div>
+          <div className="flex-1 flex justify-center">
+            <input
+              type="text"
+              placeholder="Search artworks, artists..."
+              className="w-80 px-4 py-2 rounded-full border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-700 bg-white shadow-sm"
+            />
+          </div>
           <div className="flex gap-6 items-center">
             <button className="text-blue-700 font-semibold hover:underline" onClick={onLogin}>Login / Register</button>
             <Link href="#artists" className="text-gray-700 font-semibold hover:text-blue-700 transition">Artists</Link>
             <Link href="#buyers" className="text-gray-700 font-semibold hover:text-blue-700 transition">Buyers</Link>
+            <Link href="#faq" className="text-gray-700 font-semibold hover:text-blue-700 transition">FAQ</Link>
+            <Link href="#support" className="text-gray-700 font-semibold hover:text-blue-700 transition">Support</Link>
+            <Link href="#rules" className="text-gray-700 font-semibold hover:text-blue-700 transition">Rules</Link>
+            <Link href="#blog" className="text-gray-700 font-semibold hover:text-blue-700 transition">Blog</Link>
           </div>
         </nav>
       )}

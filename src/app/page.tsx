@@ -26,6 +26,8 @@ function page() {
         <span className="text-xs text-gray-500 mb-2">Available Pages:</span>
         <div className="flex flex-wrap gap-2 justify-center">
           <Link href="/" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Home</Link>
+          <Link href="/login" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Login</Link>
+          <Link href="/register" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Register</Link>
           <Link href="/template1" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Template 1</Link>
           <Link href="/template2" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Template 2</Link>
           <Link href="/template3" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Template 3</Link>
