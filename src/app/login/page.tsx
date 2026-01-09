@@ -9,15 +9,21 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  type User = {
+    email: string;
+    password: string;
+    [key: string]: any;
+  };
+
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setError("");
 
-    let users = [];
+    let users: User[] = [];
     try {
       users = JSON.parse(localStorage.getItem("users") || "[]");
     } catch {}
-    const foundUser = users.find(u => u.email === email && u.password === password);
+    const foundUser = users.find((u: User) => u.email === email && u.password === password);
     if (foundUser) {
       localStorage.setItem("active_user", JSON.stringify(foundUser));
       router.replace("/dashboard");

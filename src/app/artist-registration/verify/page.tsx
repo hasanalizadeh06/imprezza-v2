@@ -29,12 +29,12 @@ function ArtistVerifyContent() {
           } catch {}
         }
         // Get users array from localStorage
-        let users = [];
+        let users: { email: string; role: string }[] = [];
         try {
           users = JSON.parse(localStorage.getItem("users") || "[]");
         } catch {}
         // Check if user already exists (by email)
-        const exists = users.some(u => u.email === decoded.email && u.role === "artist");
+        const exists = users.some((u: { email: string; role: string }) => u.email === decoded.email && u.role === "artist");
         if (!exists) {
           users.push(decoded);
         }

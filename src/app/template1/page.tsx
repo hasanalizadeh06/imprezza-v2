@@ -97,7 +97,13 @@ export default function Home() {
       )}
 
       {/* Landing content with navbar, artists, buyers, artworks, info sections */}
-      <LandingContent onLogin={handleLoginClick} />
+      <LandingContent 
+        onLogin={handleLoginClick} 
+        onRegister={() => {
+          setShowModal(true);
+          setTimeout(() => setModalState('open'), 100);
+        }} 
+      />
     </div>
   );
 }

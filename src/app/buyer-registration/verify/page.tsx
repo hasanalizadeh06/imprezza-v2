@@ -29,11 +29,11 @@ function BuyerVerifyContent() {
             if (tempPass) user.password = tempPass;
           } catch {}
         }
-        let users = [];
+        let users: Array<{ email: string; role: string; password?: string }> = [];
         try {
           users = JSON.parse(localStorage.getItem("users") || "[]");
         } catch {}
-        const exists = users.some(u => u.email === user.email && u.role === "buyer");
+        const exists = users.some((u: { email: string; role: string }) => u.email === user.email && u.role === "buyer");
         if (!exists) {
           users.push(user);
         }
