@@ -33,7 +33,9 @@ export default function Home() {
   const handleLoginClick = useCallback(() => {
     router.push("/login");
   }, [router]);
-
+  const handleRegisterClick = useCallback(() => {
+    router.push("/register");
+  }, [router]);
   return (
     <div className="relative min-h-screen pt-10 w-full flex flex-col items-center justify-start bg-gradient-to-br from-pink-200 via-blue-100 to-yellow-100 overflow-hidden">
       {/* Decorative background */}
@@ -99,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* Landing content with navbar, artists, buyers, artworks, info sections */}
-        <LandingContent onLogin={handleLoginClick} showNavbar={showNavbar} />
+        <LandingContent onLogin={handleLoginClick} onRegister={handleRegisterClick} showNavbar={showNavbar} />
     </div>
   );
 }

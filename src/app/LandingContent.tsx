@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function LandingContent({ onLogin, showNavbar = true }: { onLogin: () => void, showNavbar?: boolean }) {
+
+export default function LandingContent({ onLogin, onRegister, showNavbar = true }: { onLogin: () => void, onRegister: () => void, showNavbar?: boolean }) {
   return (
     <div className="w-full">
       {/* Navbar */}
@@ -19,7 +20,8 @@ export default function LandingContent({ onLogin, showNavbar = true }: { onLogin
             />
           </div>
           <div className="flex gap-6 items-center">
-            <button className="text-blue-700 font-semibold hover:underline" onClick={onLogin}>Login / Register</button>
+            <button className="text-blue-700 font-semibold hover:underline" onClick={onLogin}>Login</button>
+            <button className="text-blue-700 font-semibold hover:underline" onClick={onRegister}>Register</button>
             <Link href="#artists" className="text-gray-700 font-semibold hover:text-blue-700 transition">Artists</Link>
             <Link href="#buyers" className="text-gray-700 font-semibold hover:text-blue-700 transition">Buyers</Link>
             <Link href="#faq" className="text-gray-700 font-semibold hover:text-blue-700 transition">FAQ</Link>
