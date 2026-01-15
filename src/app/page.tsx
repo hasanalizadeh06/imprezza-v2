@@ -39,6 +39,14 @@ function page() {
           <Link href="/buyer-registration/verify" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Buyer Verify</Link>
         </div>
       </div>
+      {/* Available components links */}
+      <div className="mt-16 w-full max-w-xs flex flex-col gap-2 items-center">
+        <span className="text-xs text-gray-500 mb-2">Available Components:</span>
+        <div className="flex flex-wrap gap-2 justify-center">
+          <Link href="/components/home" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Home Page</Link>
+          <Link href="/components/artist/1" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Artist Page</Link>
+        </div>
+      </div>
     </div>
   );
 }
