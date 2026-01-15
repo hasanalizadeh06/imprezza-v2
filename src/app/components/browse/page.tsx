@@ -359,7 +359,7 @@ export default function Page() {
                         </div>
 
                         <Button className="w-full bg-primary hover:bg-primary/90" asChild>
-                          <Link href={`/artist/${artist.id}`}>
+                          <Link href={`/components/artist/${artist.id}`}>
                             View Profile
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>
