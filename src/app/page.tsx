@@ -44,6 +44,7 @@ function page() {
         <span className="text-xs text-gray-500 mb-2">Available Components:</span>
         <div className="flex flex-wrap gap-2 justify-center">
           <Link href="/components/home" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Home Page</Link>
+          <Link href="/components/browse" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">All Artists Page</Link>
           <Link href="/components/artist/1" className="px-3 py-1 rounded bg-gray-200 text-xs text-gray-700 hover:bg-gray-300 transition">Artist Page</Link>
         </div>
       </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Search, Filter, MapPin, DollarSign, Calendar, Star, Heart, ArrowRight } from 'lucide-react';
